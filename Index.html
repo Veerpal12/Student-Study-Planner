@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Defines the character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the website adjust to mobile screens -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title displayed on the browser tab -->
+    <title>Student Study Planner</title>
+
+    <!-- Connects the CSS file to HTML -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background"></div>
+
+    <!-- Main container of the website -->
+    <div class="container">
+
+        <!-- Main heading -->
+        <h1>Student Study Planner</h1>
+
+        <!-- Short description -->
+        <p>Organize your studies and daily tasks!</p>
+
+        <!-- Section containing all input fields -->
+        <div class="input-section">
+
+            <!-- Input field for entering task name -->
+            <input type="text" id="taskInput"
+                   placeholder="Enter your task">
+
+            <!-- Dropdown menu for selecting subject -->
+            <select id="subjectInput">
+                <option value="">Select Subject</option>
+                <option value="Python">Python</option>
+                <option value="Gate Q's">Gate Q's</option>
+                <option value="C">C</option>
+                <option value="DSA">DSA</option>
+                <option value="Other">Other</option>
+            </select>
+            
+            <h3>Deadline</h3>
+            <!-- Input field for selecting deadline -->
+            <input type="date" id="dateInput">
+
+            <!-- Calls addTask() when button is clicked -->
+            <button onclick="addTask()">Add Task</button>
+
+        </div>
+
+        <!-- Heading for displaying tasks -->
+        <h2>My Tasks</h2>
+
+        <!-- Displays task statistics -->
+        <div class="task-stats">
+
+            <!-- Total number of tasks -->
+            <p>Total: <span id="totalTasks">0</span></p>
+
+            <!-- Number of completed tasks -->
+            <p>Completed: <span id="completedTasks">0</span></p>
+
+            <!-- Number of pending tasks -->
+            <p>Pending: <span id="pendingTasks">0</span></p>
+
+        </div>
+
+        <!-- JavaScript will display tasks inside this list -->
+        <ul id="taskList"></ul>
+
+    </div>
+
+    <!-- Connects the JavaScript file to HTML -->
+    <script src="script.js"></script>
+
+</body>
+</html>

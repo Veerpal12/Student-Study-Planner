@@ -1,0 +1,184 @@
+
+/* Styles the entire webpage */
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Background Image */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* ADD YOUR IMAGE LOCATION HERE */
+    background-image: url("images.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+    animation: fadeIn 4s ease-in forwards;
+
+    z-index: -2;
+}
+
+/* Background Fade Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.65;
+    }
+}
+
+/* Dark overlay for background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.2);
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Main white box containing the website */
+.container {
+    position: relative;
+    z-index: 1;
+
+    max-width: 650px;
+    margin: 40px auto;
+
+    background: rgba(255, 255, 255, 0.90);
+
+    padding: 25px;
+    border-radius: 12px;
+
+    /* Adds a light shadow around the box */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Styles the main heading */
+h1 {
+    text-align: center;
+    color: #2563eb;
+}
+
+/* Styles the description below the heading */
+.container > p {
+    text-align: center;
+    color: #555;
+}
+
+/* Arranges input fields vertically */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+/* Styles input boxes, dropdown and buttons */
+input, select, button {
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Styles the Add Task button */
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+
+    cursor: pointer;
+}
+
+/* Changes button color when mouse moves over it */
+button:hover {
+    background: #1d4ed8;
+}
+
+/* Adds spacing above the task heading */
+h2 {
+    margin-top: 30px;
+}
+
+/* Styles the task statistics section */
+.task-stats {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #eff6ff;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Removes default bullets from the task list */
+#taskList {
+    list-style: none;
+    padding: 0;
+}
+
+/* Styles each individual task box */
+.task {
+    background: #f8fafc;
+    border: 1px solid #ddd;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+/* Changes background when a task is completed */
+.task.completed {
+    background: #dcfce7;
+}
+
+/* Draws a line through completed task names */
+.task.completed .task-name {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Makes task names bold */
+.task-name {
+    font-weight: bold;
+}
+
+/* Styles subject and deadline information */
+.task-info {
+    color: #555;
+    font-size: 13px;
+    margin-top: 7px;
+}
+
+/* Styles buttons inside each task */
+.task button {
+    margin: 8px 5px 0 0;
+    padding: 8px 12px;
+}
+
+/* Gives the Delete button a red color */
+.delete-btn {
+    background: #dc2626;
+}
+
+/* Darkens Delete button on hover */
+.delete-btn:hover {
+    background: #b91c1c;
+}
